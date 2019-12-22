@@ -21,8 +21,8 @@
     },
     "scripts": {
         "post-update-cmd": [
-            "Iradi\\Scripts\\Events::publishConfigsPostUpdate",
-            "php --version"
+            "php --version",
+            "Iradi\\Scripts\\Events::publishConfigsPostUpdate"
         ],
         "post-package-install": "Iradi\\Scripts\\Events::publishConfigs",
         "post-install-cmd": "Iradi\\Scripts\\Events::publishConfigs",
