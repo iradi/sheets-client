@@ -22,7 +22,7 @@
     "scripts": {
         "post-update-cmd": [
             "cp -f src/iradi-settings/iradi-sheets.php ../../../../../iradi-sheets.php",
-            "Iradi\\Scripts\\Events::publishConfigsPostUpdate",
+            "Iradi\\Scripts\\Events::publishConfigsPostUpdate"
         ],
         "post-package-install": "Iradi\\Scripts\\Events::publishConfigs",
         "post-install-cmd": "Iradi\\Scripts\\Events::publishConfigs",
