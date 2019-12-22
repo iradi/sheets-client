@@ -5,7 +5,8 @@
     "authors": [
         {
             "name": "eslamradi",
-            "email": "eslamradii@gmail.com"
+            "email": "eslamradii@gmail.com",
+            "homepage": "https://github.com/eslamradi"
         }
     ],
     "minimum-stability": "dev",
@@ -14,8 +15,14 @@
     },
     "autoload": {
         "psr-4": {
-            "Iradi\\SheetsClient\\": "src/"
+            "Iradi\\SheetsClient\\": "src/",
+            "Iradi\\Scripts\\": "scripts/"
         }
-
+    },
+    "scripts": {
+        "post-update-cmd": "Iradi\\Scripts\\Events::publishConfigs",
+        "post-package-install": "Iradi\\Scripts\\Events::publishConfigs",
+        "post-install-cmd": "Iradi\\Scripts\\Events::publishConfigs",
+        "post-create-project-cmd": "Iradi\\Scripts\\Events::publishConfigs"
     }
 }
