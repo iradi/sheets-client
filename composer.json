@@ -20,7 +20,7 @@
         }
     },
     "scripts": {
-        "post-update-cmd": "Iradi\\Scripts\\Events::publishConfigs",
+        "post-update-cmd": "Iradi\\Scripts\\Events::publishConfigsPostUpdate",
         "post-package-install": "Iradi\\Scripts\\Events::publishConfigs",
         "post-install-cmd": "Iradi\\Scripts\\Events::publishConfigs",
         "post-create-project-cmd": "Iradi\\Scripts\\Events::publishConfigs"
