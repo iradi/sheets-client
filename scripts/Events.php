@@ -25,4 +25,21 @@ class Events
             }
         }
     }
+    public static function publishConfigsPostUpdate(Event $event)
+    {
+        $homeDir = $event->getComposer()->getConfig()->get('home');
+
+        $vendorDir = $event->getComposer()->getConfig()->get('vendor-dir');
+        $files = glob($vendorDir, '/*iradi-settings/*');
+
+        foreach ($files as $file) {
+            $destPath = $homeDir.'/iradi-settings/'.basename($file);
+            if(!file_exists($destPath)){
+                copy($file, $destPath);
+                print("Published File: {basename($file)}");
+            } else {
+                print("File already exists: {basename($file)}");
+            }
+        }
+    }
 }
